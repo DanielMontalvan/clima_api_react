@@ -45,7 +45,7 @@ class App extends Component {
     }
   };
 
-  render() {
+  render() { 
     const error = this.state.error;
     let resultado;
     if (error) {
