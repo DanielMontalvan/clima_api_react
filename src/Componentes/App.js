@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     error: "",
     consulta: "",
-    resultado: ""
+    resultado: {}
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -52,16 +52,16 @@ class App extends Component {
 
   render() {
     const error = this.state.error;
-    let resultado;
+    let resultadoE;
     let rClima;
     if (error) {
-      resultado = <Error mensaje="Ambos campos son obligatorios" />;
+      resultadoE = <Error mensaje="Ambos campos son obligatorios" />;
     }
     return (
       <div className="App">
         <Header className="App-header" titulo="Clima React" />
         <Formulario datosConsulta={this.datosConsulta} />
-        {resultado}
+        {resultadoE}
         <Clima resultado={this.state.resultado} />
       </div>
     );

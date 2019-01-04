@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import PropTypes from 'prop-types';
 class Formulario extends Component {
   state = {};
   ciudadRef = React.createRef();
@@ -24,11 +24,12 @@ class Formulario extends Component {
           <div className="row">
             <form onSubmit={this.buscarClima}>
               <div className="input-field col s12 m8 l4 offset-m2">
-                 <input id="ciudad" ref={this.ciudadRef} type="text" />
+                <input id="ciudad" ref={this.ciudadRef} type="text" />
                 <label htmlFor="ciudad ">Ciudad:</label>
               </div>
               <div className="input-field col s12 m8 l4 offset-m2">
                 <select ref={this.paisRef}>
+                  <option value="HN">Honduras</option>
                   <option value="AR">Argentina</option>
                   <option value="CO">Colombia</option>
                   <option value="CR">Costa Rica</option>
@@ -53,5 +54,7 @@ class Formulario extends Component {
     );
   }
 }
-
+Formulario.propTypes = {
+datosConsulta:PropTypes.func.isRequired
+}
 export default Formulario;
